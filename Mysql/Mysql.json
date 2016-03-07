@@ -1,0 +1,234 @@
+{
+	"general":
+	{
+		"language": "PHP",
+		"category": "Storage",
+		"buy_price": 0,
+		"use_price": 0
+	},
+	"properties":
+	{
+	},
+	"interfaces":
+	{
+		"store":
+		{
+			"direction": "input",
+			"pattern": "consumer",
+			"custom": false,
+			"automatic": false,
+			"timer": null,
+			"hidden": false,
+			"rule": null,
+			"input": null,
+			"types": [],
+			"properties": []
+		}
+	},
+	"configs":
+	{
+		"host":
+		{
+			"input": "text",
+			"default": "",
+			"hidden": false,
+			"rule": null
+		},
+		"port":
+		{
+			"input": "text",
+			"default": "3306",
+			"hidden": false,
+			"rule": null
+		},
+		"user":
+		{
+			"input": "text",
+			"default": "",
+			"hidden": false,
+			"rule": null
+		},
+		"pass":
+		{
+			"input": "text",
+			"default": "",
+			"hidden": false,
+			"rule": null
+		},
+		"database":
+		{
+			"input": "text",
+			"default": "",
+			"hidden": false,
+			"rule": null
+		},
+		"table":
+		{
+			"input": "text",
+			"default": "",
+			"hidden": false,
+			"rule": null
+		}
+	},
+	"translation":
+	{
+		"en":
+		{
+			"general":
+			{
+				"name": "Mysql Storage",
+				"short_description": "Store information in a Mysql database.",
+				"long_description": "Store information in a Mysql database. Only matching fields will be considered.",
+				"prevention": null,
+				"config_url": null,
+				"panel_url": null,
+				"product_url": null,
+				"doc_url": null
+			},
+			"properties":
+			{
+			},
+			"interfaces":
+			{
+				"store":
+				{
+					"name": "store",
+					"description": "Store",
+					"rule": null,
+					"placeholder": null,
+					"values": null
+				}
+			},
+			"configs":
+			{
+				"host":
+				{
+					"name": "host",
+					"description": "The server host name or ip",
+					"rule": null,
+					"placeholder": "Host",
+					"values": null
+				},
+				"port":
+				{
+					"name": "port",
+					"description": "The port to connect to",
+					"rule": null,
+					"placeholder": "Port",
+					"values": null
+				},
+				"user":
+				{
+					"name": "user",
+					"description": "The username",
+					"rule": null,
+					"placeholder": "Username",
+					"values": null
+				},
+				"pass":
+				{
+					"name": "pass",
+					"description": "The password",
+					"rule": null,
+					"placeholder": "Password",
+					"values": null
+				},
+				"database":
+				{
+					"name": "database",
+					"description": "The database name",
+					"rule": null,
+					"placeholder": "Database",
+					"values": null
+				},
+				"table":
+				{
+					"name": "table",
+					"description": "The table name",
+					"rule": null,
+					"placeholder": "Table",
+					"values": null
+				}
+			}
+		},
+		"fr":
+		{
+			"general":
+			{
+				"name": "Stockage Mysql",
+				"short_description": "Stocke des informations dans une base de données Mysql.",
+				"long_description": "Stocke des informations dans une base de données Mysql. Seuls les champs correspondants sont considérés.",
+				"prevention": null,
+				"config_url": null,
+				"panel_url": null,
+				"product_url": null,
+				"doc_url": null
+			},
+			"properties":
+			{
+			},
+			"interfaces":
+			{
+				"store":
+				{
+					"name": "enregistrer",
+					"description": "Enregistrer",
+					"rule": null,
+					"placeholder": null,
+					"values": null
+				}
+			},
+			"configs":
+			{
+				"host":
+				{
+					"name": "host",
+					"description": "Nom ou l'adresse IP du serveur",
+					"rule": null,
+					"placeholder": "Host",
+					"values": null
+				},
+				"port":
+				{
+					"name": "port",
+					"description": "Numéro de port",
+					"rule": null,
+					"placeholder": "Port",
+					"values": null
+				},
+				"user":
+				{
+					"name": "user",
+					"description": "Nom d'utilisateur",
+					"rule": null,
+					"placeholder": "User",
+					"values": null
+				},
+				"pass":
+				{
+					"name": "pass",
+					"description": "Mot de passe",
+					"rule": null,
+					"placeholder": "Password",
+					"values": null
+				},
+				"database":
+				{
+					"name": "database",
+					"description": "Nom de la base de données",
+					"rule": null,
+					"placeholder": "Database",
+					"values": null
+				},
+				"table":
+				{
+					"name": "table",
+					"description": "Nom de la table",
+					"rule": null,
+					"placeholder": "Table",
+					"values": null
+				}
+			}
+		}
+	}
+}

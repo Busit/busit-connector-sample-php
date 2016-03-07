@@ -1,0 +1,86 @@
+{
+	"general":
+	{
+		"buy_price": 0,
+		"category": "home",
+		"use_price": 0,
+		"language": "php",
+		"name": "Alarm"
+	},
+	"properties": {},
+	"configs": {},
+	"interfaces":
+	{
+		"alarm":
+		{
+			"input": "text",
+			"pattern": "producer",
+			"direction": "output",
+			"timer": "E-E-E-E-E",
+			"hidden": false,
+			"automatic": true,
+			"rule": null,
+			"properties": [],
+			"types": [],
+			"custom": true
+		}
+	},
+	"translation":
+	{
+		"en":
+		{
+			"general":
+			{
+				"long_description": "Trigger messages when you want",
+				"short_description": "Trigger messages when you want",
+				"doc_url": null,
+				"name": "Alarm",
+				"panel_url": null,
+				"prevention": null,
+				"config_url": null,
+				"product_url": null
+			},
+			"configs": {},
+			"interfaces":
+			{
+				"alarm":
+				{
+					"values": null,
+					"description": "Send a message",
+					"placeholder": "The message to send",
+					"name": "alarm",
+					"rule": null
+				}
+			},
+			"properties": {}
+			
+		},
+		"fr":
+		{
+			"general":
+			{
+				"long_description": "Délenche un message quand vous le souhaitez",
+				"short_description": "Délenche un message quand vous le souhaitez",
+				"doc_url": null,
+				"name": "Alarme",
+				"panel_url": null,
+				"prevention": null,
+				"config_url": null,
+				"product_url": null
+			},
+			"configs": {},
+			"interfaces":
+			{
+				"alarm":
+				{
+					"values": null,
+					"description": "Envoyer un message",
+					"placeholder": "Le message à envoyer",
+					"name": "alarm",
+					"rule": null
+				}
+			},
+			"properties": {}
+		}
+	}
+}

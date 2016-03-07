@@ -1,0 +1,51 @@
+[EN]
+title = "Time Filter"
+first_text = "Please configure the time periods that should <strong>allow</strong> messages to pass through. If <strong>at least one</strong> period matches, the message will proceed; And only if <strong>none</strong> of the periods match, then the message will be blocked."
+
+interval = "Period"
+monday = "Monday"
+tuesday = "Tuesday"
+wednesday = "Wednesday"
+thursday = "Thursday"
+friday = "Friday"
+saturday = "Saturday"
+sunday = "Sunday"
+from = "From"
+to = "Until"
+from_placeholder = "e.g. 0:15"
+to_placeholder = "e.g. 23:59"
+
+error_antispam = "Form validation failed"
+error_empty = "You should select at least one day and specify both start time and end time"
+error_name = "Please give a nice name to your filter between 2 and 150 characters"
+error_other = "Invalid state"
+
+add_step = "Add period"
+submit = "Submit"
+
+[FR]
+title = "Filtre Temporel"
+first_text = "Configurez les périodes auxquelles les messages <strong>peuvent</strong> passer. Si <strong>au moins une</strong> période s'applique, le message continuera; Seulement si <strong>aucune</strong> période ne s'applique, le message sera bloqué."
+
+name = "Nom"
+name_help = "Nom du filtre"
+interval = "Période"
+monday = "Lundi"
+tuesday = "Mardi"
+wednesday = "Mercredi"
+thursday = "Jeudi"
+friday = "Vendredi"
+saturday = "Samedi"
+sunday = "Dimanche"
+from = "De"
+to = "Jusqu'à"
+from_placeholder = "ex. 0:15"
+to_placeholder = "ex. 23:59"
+
+error_antispam = "Erreur de validation du formulaire"
+error_empty = "Vous devez sélectionner au moins un jour et choisir une heure de début et de fin"
+error_name = "Indiquez un nom pour votre filtre entre 2 et 150 caractères"
+error_other = "Etat invalide"
+
+add_step = "Ajouter une période"
+submit = "Valider"
