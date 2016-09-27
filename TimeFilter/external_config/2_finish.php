@@ -44,15 +44,14 @@ try
 	}
 	$_SESSION['FORM']['time'] = $time;
 	
-	api::send('self/busit/instance/config/update', array('id'=>$_SESSION['BUSIT_INSTANCE'], 'key'=>'data', 'value'=>json_encode($time)), "i:{$_SESSION['BUSIT_INSTANCE']}:{$_SESSION['BUSIT_TOKEN']}");
-	api::send('self/busit/instance/update', array('id'=>$_SESSION['BUSIT_INSTANCE'], 'name'=>$_POST['name'], 'configured'=>1), "i:{$_SESSION['BUSIT_INSTANCE']}:{$_SESSION['BUSIT_TOKEN']}");
+	api::send('self/vanilla/instance/config/update', array('id'=>$_SESSION['BUSIT_INSTANCE'], 'data'=>json_encode($time)), "i:{$_SESSION['BUSIT_INSTANCE']}:{$_SESSION['BUSIT_TOKEN']}");
 
 	unset($_SESSION['BUSIT_TOKEN']);
 	unset($_SESSION['BUSIT_INSTANCE']);
 	unset($_SESSION['__ANTISPAM__']);
 	unset($_SESSION['FORM']);
 
-	template::redirect("https://www.busit.com/private/panel/async/instance/confirm");
+	template::redirect("https://apps.busit.com/done");
 }
 catch(Exception $e)
 {

@@ -1,86 +1,71 @@
 {
-	"general":
+	"channels": 
 	{
-		"buy_price": 0,
-		"category": "home",
-		"use_price": 0,
-		"language": "php",
-		"name": "Alarm"
-	},
-	"properties": {},
-	"configs": {},
-	"interfaces":
-	{
-		"alarm":
+		"alarm": 
 		{
-			"input": "text",
 			"pattern": "producer",
-			"direction": "output",
-			"timer": "E-E-E-E-E",
-			"hidden": false,
-			"automatic": true,
-			"rule": null,
-			"properties": [],
-			"types": [],
-			"custom": true
+			"timer": "E-E-E-8-0",
+			"types": ["message"]
 		}
 	},
-	"translation":
+	"configs": 
 	{
-		"en":
+		"message":
 		{
-			"general":
-			{
-				"long_description": "Trigger messages when you want",
-				"short_description": "Trigger messages when you want",
-				"doc_url": null,
-				"name": "Alarm",
-				"panel_url": null,
-				"prevention": null,
-				"config_url": null,
-				"product_url": null
-			},
-			"configs": {},
-			"interfaces":
-			{
-				"alarm":
-				{
-					"values": null,
-					"description": "Send a message",
-					"placeholder": "The message to send",
-					"name": "alarm",
-					"rule": null
-				}
-			},
-			"properties": {}
-			
-		},
-		"fr":
+			"input": "text"
+		}
+	},
+	"translation": 
+	{
+		"fr": 
 		{
-			"general":
+			"general": 
 			{
-				"long_description": "Délenche un message quand vous le souhaitez",
-				"short_description": "Délenche un message quand vous le souhaitez",
-				"doc_url": null,
 				"name": "Alarme",
-				"panel_url": null,
-				"prevention": null,
-				"config_url": null,
-				"product_url": null
+				"description": "Déclenche un message quand vous le désirez."
 			},
-			"configs": {},
-			"interfaces":
+			"channels": 
 			{
-				"alarm":
+				"alarm": 
 				{
-					"values": null,
-					"description": "Envoyer un message",
-					"placeholder": "Le message à envoyer",
-					"name": "alarm",
-					"rule": null
+					"display": "Déclencher le message : \"{{message}}\"",
+					"description": "Déclencher le message"
 				}
 			},
-			"properties": {}
+			"configs": 
+			{
+				"message":
+				{
+					"display": "message",
+					"description": "Spécifiez le message à envoyer",
+					"placeholder": "Message"
+				}
+			}
+		},
+		"en": 
+		{
+			"general": 
+			{
+				"name": "Alarm",
+				"description": "Trigger a message when you want."
+			},
+			"channels": 
+			{
+				"alarm": 
+				{
+					"display": "Trigger the message : \"{{message}}\"",
+					"description": "Trigger the message"
+				}
+			},
+			"configs": 
+			{
+				"message":
+				{
+					"display": "message",
+					"description": "Specify the message",
+					"placeholder": "Message"
+				}
+			}
 		}
 	}
 }

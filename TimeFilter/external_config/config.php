@@ -10,6 +10,8 @@ if( !isset($_SESSION['BUSIT_INSTANCE']) && !isset($_GET['instance']) )
 	$template->output("<p>{$lang['error']}</p>");
 else
 {
+	session_unset();
+
 	$_SESSION['BUSIT_INSTANCE'] = $_GET['instance'];
 	if( $_GET['token'] )
 	{
@@ -17,14 +19,15 @@ else
 		template::redirect("/timefilter/1_params");
 	}
 	
+
 	$data = array(
 		'instance' => security::encode($_GET['instance']),
-		'requestor' => 'Busit Time Filter',
-		'grants' => 'ACCESS,SELF_ACCESS,SELF_INSTANCE_SELECT,SELF_INSTANCE_UPDATE',
-		'referer' => "https://{$_SERVER['HTTP_HOST']}/timefilter/1_params"
+		'requestor' => 'Busit Application Facebook',
+		'grants' => 'ACCESS,SELF_ACCESS,SELF_INSTANCE_SELECT,SELF_INSTANCE_UPDATE,SELF_LINK_INSERT,SELF_LINK_DELETE',
+		'referer' => "https://apps.busit.com{$_SERVER['REQUEST_URI']}"
 	);
 	
-	template::redirect("https://{$GLOBALS['CONFIG']['HOSTNAME']}/panel/instance/grant?data=" . urlencode(json_encode($data)));
+	template::redirect("https://apps.busit.com/auth?data=" . urlencode(json_encode($data)));
 }
 
 ?>

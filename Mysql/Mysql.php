@@ -1,51 +1,41 @@
 <?php
 
-namespace Busit\Connectors\Com\Busit;
+use com\busit\App;
+use com\busit\Consumer;
 
-use Busit\Framework\Com\Busit\Connector;
-use Busit\Framework\Com\Busit\Consumer;
-use Busit\Framework\Com\Busit\Factory;
-use Busit\Framework\Com\Anotherservice\Db\mysql;
+define("__CLASSNAME__", "\\Mysql");
 
-define("__CLASSNAME__", "\\Busit\\Connectors\\Com\\Busit\\MysqlStorage");
-
-class MysqlStorage extends Connector implements Consumer
+class Mysql extends App implements Consumer
 {
     public function consume($message, $in)
     {
 		try
 		{
-			$db = new mysql(
-				$this->config('host'), 
-				$this->config('user'), 
-				$this->config('pass'), 
-				$this->config('database'), 
-				$this->config('port')
-			);
-			
-			$rows = $db->select("SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE " . 
-				"TABLE_SCHEMA = '" . mysql::escape($this->config('database')) . "' AND " . 
-				"TABLE_NAME = '" . mysql::escape($this->config('table')) . "'");
+			$db = new PDO('mysql:host='.$this->config('host').';dbname='.$this->config('database'), $this->config('username'), $this->config('pass'));
 
-			if( $rows == null || count($rows) == 0 )
+			$rows = $db->query("SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE " . 
+				"TABLE_SCHEMA = '" . $this->escape($this->config('database')) . "' AND " . 
+				"TABLE_NAME = '" . $this->escape($this->config('table')) . "'");
+
+			if( $rows == null || $rows->rowCount() == 0 )
 				throw new \Exception('No columns found for given table');
 			
 			$fields = array();
 			$values = array();
-			foreach( $rows as $r )
+			while ($r = $rows->fetch())
 			{
 				foreach( $message->content() as $key => $value )
 				{
 					if( strtolower($r['COLUMN_NAME']) == strtolower($key) )
 					{
 						$fields[] = $r['COLUMN_NAME'];
-						$values[] = "'" . mysql::escape($value) . "'";
+						$values[] = "'" . $this->escape($value) . "'";
 						break;
 					}
 				}
 			}
 			
-			$db->insert("INSERT INTO " . mysql::escape($this->config('table')) . " (" . implode($fields, ',') . ") VALUES (" . implode($values, ',') . ")");
+			$db->exec("INSERT INTO " . $this->escape($this->config('table')) . " (" . implode($fields, ',') . ") VALUES (" . implode($values, ',') . ")");
 		}
 		catch(\Exception $e)
 		{
@@ -55,8 +45,22 @@ class MysqlStorage extends Connector implements Consumer
 
     public function test()
     {
-        return true;
+		try
+		{
+			$db = new PDO('mysql:host='.$this->config('host').';dbname='.$this->config('database'), $this->config('username'), $this->config('pass'));
+			$db->exec("SELECT 1");
+			return true;
+		}
+		catch(\Exception $e)
+		{
+			return false;
+		}
     }
+
+	public function escape($text)
+	{
+		  return preg_replace("/(\\x00|\\n|\\r|'|\"|\\\\|\\x1a)/", "\\\\\\1", $text);
+	}
 }
 
 ?>

@@ -1,232 +1,148 @@
 {
-	"general":
-	{
-		"language": "PHP",
-		"category": "Storage",
-		"buy_price": 0,
-		"use_price": 0
-	},
-	"properties":
-	{
-	},
-	"interfaces":
+	"channels":
 	{
 		"store":
 		{
 			"direction": "input",
-			"pattern": "consumer",
-			"custom": false,
-			"automatic": false,
-			"timer": null,
-			"hidden": false,
-			"rule": null,
-			"input": null,
-			"types": [],
-			"properties": []
+			"pattern": "consumer"
 		}
 	},
 	"configs":
 	{
 		"host":
 		{
-			"input": "text",
-			"default": "",
-			"hidden": false,
-			"rule": null
+			"input": "text"
 		},
 		"port":
 		{
-			"input": "text",
-			"default": "3306",
-			"hidden": false,
-			"rule": null
+			"input": "text"
 		},
-		"user":
+		"username":
 		{
-			"input": "text",
-			"default": "",
-			"hidden": false,
-			"rule": null
+			"input": "text"
 		},
 		"pass":
 		{
-			"input": "text",
-			"default": "",
-			"hidden": false,
-			"rule": null
+			"input": "password"
 		},
 		"database":
 		{
-			"input": "text",
-			"default": "",
-			"hidden": false,
-			"rule": null
+			"input": "text"
 		},
 		"table":
 		{
-			"input": "text",
-			"default": "",
-			"hidden": false,
-			"rule": null
+			"input": "text"
 		}
 	},
 	"translation":
 	{
-		"en":
-		{
-			"general":
-			{
-				"name": "Mysql Storage",
-				"short_description": "Store information in a Mysql database.",
-				"long_description": "Store information in a Mysql database. Only matching fields will be considered.",
-				"prevention": null,
-				"config_url": null,
-				"panel_url": null,
-				"product_url": null,
-				"doc_url": null
-			},
-			"properties":
-			{
-			},
-			"interfaces":
-			{
-				"store":
-				{
-					"name": "store",
-					"description": "Store",
-					"rule": null,
-					"placeholder": null,
-					"values": null
-				}
-			},
-			"configs":
-			{
-				"host":
-				{
-					"name": "host",
-					"description": "The server host name or ip",
-					"rule": null,
-					"placeholder": "Host",
-					"values": null
-				},
-				"port":
-				{
-					"name": "port",
-					"description": "The port to connect to",
-					"rule": null,
-					"placeholder": "Port",
-					"values": null
-				},
-				"user":
-				{
-					"name": "user",
-					"description": "The username",
-					"rule": null,
-					"placeholder": "Username",
-					"values": null
-				},
-				"pass":
-				{
-					"name": "pass",
-					"description": "The password",
-					"rule": null,
-					"placeholder": "Password",
-					"values": null
-				},
-				"database":
-				{
-					"name": "database",
-					"description": "The database name",
-					"rule": null,
-					"placeholder": "Database",
-					"values": null
-				},
-				"table":
-				{
-					"name": "table",
-					"description": "The table name",
-					"rule": null,
-					"placeholder": "Table",
-					"values": null
-				}
-			}
-		},
 		"fr":
 		{
 			"general":
 			{
 				"name": "Stockage Mysql",
-				"short_description": "Stocke des informations dans une base de données Mysql.",
-				"long_description": "Stocke des informations dans une base de données Mysql. Seuls les champs correspondants sont considérés.",
-				"prevention": null,
-				"config_url": null,
-				"panel_url": null,
-				"product_url": null,
-				"doc_url": null
+				"description": "Stocke des informations dans une base de données Mysql."
 			},
-			"properties":
-			{
-			},
-			"interfaces":
+			"channels":
 			{
 				"store":
 				{
-					"name": "enregistrer",
-					"description": "Enregistrer",
-					"rule": null,
-					"placeholder": null,
-					"values": null
+					"display": "Enregistrer des informations",
+					"description": "Enregistrer les informations de votre message dans une base de données"
 				}
 			},
 			"configs":
 			{
 				"host":
 				{
-					"name": "host",
+					"display": "Hôte",
 					"description": "Nom ou l'adresse IP du serveur",
-					"rule": null,
-					"placeholder": "Host",
-					"values": null
+					"placeholder": "Hôte"
 				},
 				"port":
 				{
-					"name": "port",
+					"display": "Port",
 					"description": "Numéro de port",
-					"rule": null,
-					"placeholder": "Port",
-					"values": null
+					"placeholder": "Port"
 				},
-				"user":
+				"username":
 				{
-					"name": "user",
+					"display": "Utilisateur",
 					"description": "Nom d'utilisateur",
-					"rule": null,
-					"placeholder": "User",
-					"values": null
+					"placeholder": "Utilisateur"
 				},
 				"pass":
 				{
-					"name": "pass",
+					"display": "Pass",
 					"description": "Mot de passe",
-					"rule": null,
-					"placeholder": "Password",
-					"values": null
+					"placeholder": "Password"
 				},
 				"database":
 				{
-					"name": "database",
+					"display": "Base de données",
 					"description": "Nom de la base de données",
-					"rule": null,
-					"placeholder": "Database",
-					"values": null
+					"placeholder": "Base de données"
 				},
 				"table":
 				{
-					"name": "table",
+					"display": "Table",
 					"description": "Nom de la table",
-					"rule": null,
-					"placeholder": "Table",
-					"values": null
+					"placeholder": "Table"
+				}
+			}
+		},
+		"en":
+		{
+			"general":
+			{
+				"name": "Mysql Storage",
+				"description": "Store information in a Mysql database."
+			},
+			"channels":
+			{
+				"store":
+				{
+					"display": "Store",
+					"description": "Store message informations to your database"
+				}
+			},
+			"configs":
+			{
+				"host":
+				{
+					"display": "Host",
+					"description": "The server host name or ip",
+					"placeholder": "Host"
+				},
+				"port":
+				{
+					"display": "Port",
+					"description": "The port to connect to",
+					"placeholder": "Port"
+				},
+				"username":
+				{
+					"display": "User",
+					"description": "The username",
+					"placeholder": "Username"
+				},
+				"pass":
+				{
+					"display": "Pass",
+					"description": "The password",
+					"placeholder": "Password"
+				},
+				"database":
+				{
+					"display": "Database",
+					"description": "The database name",
+					"placeholder": "Database"
+				},
+				"table":
+				{
+					"display": "Table",
+					"description": "The table name",
+					"placeholder": "Table"
 				}
 			}
 		}

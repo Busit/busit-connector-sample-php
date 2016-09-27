@@ -1,175 +1,115 @@
 {
-	"general": 
+	"channels": 
 	{
-		"language": "PHP",
-		"category": "Utilities",
-		"buy_price": 0,
-		"use_price": 0
-	},
-	"properties": 
-	{
-	},
-	"interfaces": 
-	{
-		"receive": 
-		{
-			"direction": "input",
-			"pattern": "transformer",
-			"custom": false,
-			"automatic": false,
-			"timer": null,
-			"hidden": false,
-			"rule": null,
-			"input": null,
-			"types": [],
-			"properties": []
-		},
 		"allow": 
 		{
-			"direction": "output",
 			"pattern": "transformer",
-			"custom": false,
-			"automatic": false,
+			"direction": "output",
 			"timer": null,
-			"hidden": false,
-			"rule": null,
-			"input": null,
-			"types": [],
-			"properties": []
+			"properties": [ ],
+			"types": [ ]
 		},
 		"block": 
 		{
-			"direction": "output",
 			"pattern": "transformer",
-			"custom": false,
-			"automatic": false,
+			"direction": "output",
 			"timer": null,
-			"hidden": false,
-			"rule": null,
-			"input": null,
-			"types": [],
-			"properties": []
+			"properties": [ ],
+			"types": [ ]
+		},
+		"receive": 
+		{
+			"pattern": "transformer",
+			"direction": "input",
+			"timer": null,
+			"properties": [ ],
+			"types": [ ]
 		}
 	},
 	"configs": 
 	{
-		"data":
+		"data": 
 		{
 			"input": "text",
-			"default": "[{'day':['monday', 'tuesday', 'wednesday', 'thursday', 'friday'], 'from':'0:00', 'to':'23:59'}]",
-			"hidden": true,
-			"rule": null
+			"default": "[{'day':['monday', 'tuesday', 'wednesday', 'thursday', 'friday'], 'from':'0:00', 'to':'23:59'}]"
 		}
 	},
 	"translation": 
 	{
-		"en": 
-		{
-			"general": 
-			{
-				"name": "Temporal filter",
-				"short_description": "Allow messages during the specified time frame",
-				"long_description": "This connector allows you to block messages that do not happen in a specific time frame.",
-				"prevention": null,
-				"config_url": "https://apps.busit.com/timefilter/config?lang=EN&token={TOKEN}&instance={INSTANCE}",
-				"panel_url": null,
-				"product_url": null,
-				"doc_url": null
-			},
-			"properties": 
-			{
-			},
-			"interfaces": 
-			{
-				"receive": 
-				{
-					"name": "receive",
-					"description": "receive",
-					"rule": null,
-					"placeholder": null,
-					"values": null
-				},
-				"allow": 
-				{
-					"name": "allow",
-					"description": "Within time frame",
-					"rule": null,
-					"placeholder": null,
-					"values": null
-				},
-				"block": 
-				{
-					"name": "block",
-					"description": "Out of time frame",
-					"rule": null,
-					"placeholder": null,
-					"values": null
-				}
-			},
-			"configs": 
-			{
-				"data":
-				{
-					"name": "data",
-					"description": "Specific JSON configuration",
-					"rule": null,
-					"placeholder": "[]",
-					"values": null
-				}
-			}
-		},
 		"fr": 
 		{
 			"general": 
 			{
 				"name": "Filtre temporel",
-				"short_description": "Autorise le passage de message dans la période donnée",
-				"long_description": "Ce connecteur vous permet de bloquer les messages qui ne survienent pas dans la plage horaire spécifiée.",
-				"prevention": null,
-				"config_url": "https://apps.busit.com/timefilter/config?lang=FR&token={TOKEN}&instance={INSTANCE}",
-				"panel_url": null,
-				"product_url": null,
-				"doc_url": null
+				"description": "Autorise le passage de message dans la période donnée",
+				"config_url": "https://apps.busit.com/timefilter/config?lang=FR&token={TOKEN}&instance={INSTANCE}"
 			},
-			"properties": 
+			"channels": 
 			{
-			},
-			"interfaces": 
-			{
-				"receive": 
-				{
-					"name": "receive",
-					"description": "receive",
-					"rule": null,
-					"placeholder": null,
-					"values": null
-				},
 				"allow": 
 				{
-					"name": "autorise",
-					"description": "Dans la période",
-					"rule": null,
-					"placeholder": null,
-					"values": null
+					"display": "autorise",
+					"description": "Dans la période"
 				},
 				"block": 
 				{
-					"name": "bloque",
-					"description": "Hors de la période",
-					"rule": null,
-					"placeholder": null,
-					"values": null
+					"display": "bloque",
+					"description": "Hors de la période"
+				},
+				"receive": 
+				{
+					"display": "receive",
+					"description": "receive"
 				}
 			},
 			"configs": 
 			{
-				"data":
+				"data": 
 				{
-					"name": "data",
+					"values": null,
 					"description": "Configuration spécifique au format JSON",
-					"rule": null,
 					"placeholder": "[]",
-					"values": null
+					"display": "data"
+				}
+			}
+		},
+		"en": 
+		{
+			"general": 
+			{
+				"name": "Temporal filter",
+				"description": "Allow messages during the specified time frame",
+				"doc_url": null,
+				"panel_url": null,
+				"config_url": "https://apps.busit.com/timefilter/config?lang=EN&token={TOKEN}&instance={INSTANCE}"
+			},
+			"channels": 
+			{
+				"allow": 
+				{
+					"display": "allow",
+					"description": "Within time frame"
+				},
+				"block": 
+				{
+					"display": "block",
+					"description": "Out of time frame"
+				},
+				"receive": 
+				{
+					"display": "receive",
+					"description": "receive"
+				}
+			},
+			"configs": 
+			{
+				"data": 
+				{
+					"values": null,
+					"description": "Specific JSON configuration",
+					"placeholder": "[]",
+					"display": "data",
+					"rule": null
 				}
 			}
 		}

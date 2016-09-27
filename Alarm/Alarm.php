@@ -1,48 +1,43 @@
 <?php
 
-namespace Busit\Connectors\Com\Busit;
+use com\busit\App;
+use com\busit\Producer;
+use com\busit\Message;
+use com\busit\Content;
 
-use Busit\Framework\Com\Busit\Connector;
-use Busit\Framework\Com\Busit\Factory;
-use Busit\Framework\Com\Busit\Producer;
+define("__CLASSNAME__", "\\Alarm");
 
-define("__CLASSNAME__", "\\Busit\\Connectors\\Com\\Busit\\Alarm");
-
-class Alarm extends Connector implements Producer
+class Alarm extends App implements Producer
 {
-    public function produce($out)
-    {
-        if ($out->value)
-		{
-            $message = Factory::message();
-            $content = Factory::content('message');
-            $content['message'] = $out->value;
-            $content['timestamp'] = time();
-            $content['date'] = date('Y-m-d H:i:s');
-            $message->content($content);
+	public function produce($out, $data=null)
+	{
+		$content = new Content('message');
+		$content['uuid'] = 'BusApp_Alarm_'.$this->id();
+		$content['data'] = ($this->config('message') ? $this->config('message') : "No message configured");
+		
+		$message = new Message();
+		$message->content($content);
 
-            return $message;
-        }
-		else
-			return null;
-    }
+		return $message;
+	}
 
-    public function sample($out)
-    {
-        $message = Factory::message();
-        $content = Factory::content('message');
-        $content['message'] = "The alarm is ringing!";
-        $content['timestamp'] = time();
-        $content['date'] = date('Y-m-d H:i:s');
-        $message->content($content);
+	public function sample($out)
+	{
+		$content = new Content('message');
+		$content['uuid'] = 'BusApp_Alarm_'.$this->id();
+		$content['data'] = "Sample for the alarm";
+		
+		$message = new Message();
+		$message->content($content);
 
-        return $message;
-    }
+		return $message;
+	}
 
-    public function test()
-    {
-        return true;
-    }
+	public function test()
+	{
+		// this BusApp does not have any dependency
+		return true;
+	}
 }
 
 ?>
